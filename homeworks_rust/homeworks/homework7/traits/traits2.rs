@@ -10,13 +10,22 @@
 // No boiler plate code this time,
 // you can do this!
 
-// I AM NOT DONE
-
 trait AppendBar {
     fn append_bar(self) -> Self;
 }
 
 //TODO: Add your code here
+impl AppendBar for Vec<String> {
+    fn append_bar(self) -> Self {
+        let mut new_vec = Vec::new();
+        for i in self.iter() {
+            new_vec.push(i.clone());
+        }
+        new_vec.push("Bar".into());
+        new_vec
+    }
+}
+
 
 #[cfg(test)]
 mod tests {
